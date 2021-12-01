@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">JQ!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item dropdown" >
+            <a class="nav-link dropdown"   href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Why JambQuestion?!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item"   (click)="checkWhoCallTheModalBox('JambQuestion')"   data-toggle="modal" data-target="#exampleModal">JambQuestion!</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  (click)="checkWhoCallTheModalBox('HowItWorks')" data-toggle="modal" data-target="#exampleModal">How JQ works</a>
+          </li>
+        <li class="nav-item dropdown" >
+            <a class="nav-link dropdown"   href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Where can JQ be useful?
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item"  (click)="checkWhoCallTheModalBox('Home')" data-toggle="modal" data-target="#exampleModal">Home</a>
+              <a class="dropdown-item"  (click)="checkWhoCallTheModalBox('Work')" data-toggle="modal" data-target="#exampleModal">Work</a>
+              <a class="dropdown-item"  (click)="checkWhoCallTheModalBox('School')" data-toggle="modal" data-target="#exampleModal">School</a>
+            </div>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore Content!</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/playit">Play</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/signup">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" >Login</a>
+          </li>
+     
+      </ul>
+    </div>
+  </nav>
+
+
+
+<!-- Button trigger modal -->
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{modalHead}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="checkModal =='JambQuestion'"> 
+          <app-introduction></app-introduction>
+        </div>
+        <div *ngIf="checkModal =='Home'"> 
+       <app-home-usefulness></app-home-usefulness>
+       </div>
+       <div *ngIf="checkModal =='HowItWorks'"> 
+       <app-how-jqworks></app-how-jqworks>
+       </div>
+       <div *ngIf="checkModal =='School'"> 
+       <app-school-usefulness></app-school-usefulness>
+       </div>
+       <div *ngIf="checkModal =='Work'"> 
+       <app-work-usefulness></app-work-usefulness>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

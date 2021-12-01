@@ -1,0 +1,73 @@
+<app-nav-bar></app-nav-bar>
+
+<section class="vh-100 bg-image" >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+  
+                <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" formControlName="Name" class="form-control form-control-lg"  [ngClass]="{ 'is-invalid': submitted && form.Name.errors }" />
+                    <label *ngIf="!submitted || !form.Name.errors  " class="form-label" for="form3Example1cg">Full Name</label>
+                    <div *ngIf="submitted && form.Name.errors" class="invalid-feedback">
+                      <div *ngIf="form.Name.errors.required">Full Name is required</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3cg" formControlName="Email" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && form.Email.errors }" />
+                    <label *ngIf="!submitted || !form.Email.errors" class="form-label" for="form3Example3cg">Your Email</label>
+                    <div *ngIf="submitted && form.Email.errors" class="invalid-feedback">
+                      <div *ngIf="form.Email.errors.required">Email is required</div>
+                      <div *ngIf="form.Email.errors.email">Email must be a valid email address</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cg" formControlName="Password" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && form.Password.errors }" />
+                    <label *ngIf="!submitted || !form.Password.errors" class="form-label" for="form3Example4cg">Password</label>
+                    <div *ngIf="submitted && form.Password.errors" class="invalid-feedback">
+                      <div *ngIf="form.Password.errors.required">Password is required</div>
+                      <div *ngIf="form.Password.errors.pattern">Password must be at least 8 characters ( must contain a capital letter, a small letter and a number ) </div>
+
+                    </div>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cdg" formControlName="RePassword" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && form.RePassword.errors }" />
+                    <label *ngIf="!submitted || !form.RePassword.errors" class="form-label" for="form3Example4cdg">Repeat your password</label>
+                    <div *ngIf="submitted && form.Name.errors" class="invalid-feedback">
+                      <div *ngIf="form.RePassword.errors.required">Passowrds does not match</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    
+                  
+                     <p> <input class="form-check-input" type="checkbox" formControlName="Agreed" id="form2Example3cg"[ngClass]="{ 'is-invalid': submitted && form.Agreed.errors }" /> I agree all statements in Terms of service </p>
+                     <div *ngIf="submitted && form.Agreed.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+                  </div>
+  
+                  <div class="d-flex justify-content-center">
+                    <button type="submit"   class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/login" class="fw-bold text-body"><u>Login here</u></a></p>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ 

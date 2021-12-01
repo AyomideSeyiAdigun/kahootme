@@ -1,0 +1,71 @@
+ <div class="container-fluid" *ngIf="show =='personality'">
+     <div class="row">
+         <div class="col-md-12">
+             <div class="row justify-content-center">  
+                   <div class="col-md-2">
+                        <div class="card">
+                            <button (click)="studentData()">
+                             <h3>STUDENT</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <button (click)="tutorData()">
+                            <h3>TUTOR</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <button (click)="professionalData()">
+                            <h3>PROFESSIONAL</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <button (click)="familyData()">
+                            <h3>FAMILY</h3>
+                            </button>
+                        </div>
+                    </div>
+             </div>
+             
+         </div>
+     </div>
+ </div>
+
+
+
+
+ <div class="container-fluid" *ngIf="show =='student'">
+     <div class="row">
+         <div class="col-md-12">
+             <app-students></app-students>
+         </div>
+     </div>
+ </div>
+
+ <div class="container-fluid" *ngIf="show =='tutor'">
+    <div class="row">
+        <div class="col-md-12">
+            <app-tutor></app-tutor>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" *ngIf="show =='family'">
+    <div class="row">
+        <div class="col-md-12">
+            <app-family></app-family>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" *ngIf="show =='professional'">
+    <div class="row">
+        <div class="col-md-12">
+            <app-professional></app-professional>
+        </div>
+    </div>
+</div>
